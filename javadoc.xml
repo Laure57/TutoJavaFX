@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project default="javadoc">
-    <target name="javadoc">
-        <javadoc access="private" author="true" classpath="../javafx-sdk-17.0.0.1/lib/javafx.base.jar;../javafx-sdk-17.0.0.1/lib/javafx.controls.jar;../javafx-sdk-17.0.0.1/lib/javafx.graphics.jar" destdir="doc" doctitle="TutoJavaFX_doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="application" source="16" sourcepath="src" splitindex="true" use="true" version="true"/>
-    </target>
-</project>
