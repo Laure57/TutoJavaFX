@@ -4,19 +4,21 @@ import java.io.*;
 import java.net.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+
+
 /**
- * Class which send 10 random data to a specific server 
- * 
+ * Class which sends data (10 random integers) to a server that must be specified in the code 
  * 
  * @author Laure Roussel
- * 
  */
+
 public class Client extends Thread {
-	 
-	
+
+
 	/**
-     * Method which override the method run() in Thread
-     */
+	 * Method which override the run() method from Thread
+	 */
+	
 	public void run() {
 
 		// hostname of the server 
@@ -25,14 +27,15 @@ public class Client extends Thread {
 		int port = 51008;
 
 		try {
-			// IP adress of the server
+			// IP address of the server
 			InetAddress address = InetAddress.getByName(hostname);
 			// Construct a datagram socket for sending and receiving datagram packets
 			DatagramSocket socket = new DatagramSocket();
 
+			
 			for (int i=0;i<10;i++) {
 
-				// Get a random integer between 0-10 then is converted into bytes
+				// Get a random integer between 0-10, which is then converted into bytes
 				Integer random = ThreadLocalRandom.current().nextInt(10);
 				String r = random.toString();
 				byte[] buf = r.getBytes();
@@ -42,7 +45,7 @@ public class Client extends Thread {
 				// Send data to the server
 				socket.send(request);
 
-				// Construct a datagram packet which will content the response of the server
+				// Construct a datagram packet which will contain the response of the server
 				byte[] buffer = new byte[16];
 				DatagramPacket response = new DatagramPacket(buffer, buffer.length);
 				// Receive data from the server
@@ -50,26 +53,26 @@ public class Client extends Thread {
 
 				// Convert the response of the server into a string 
 				String quote = new String(buffer, 0, response.getLength());
-				
-				// Write in the consol 
+
+				// Write in the command prompt
 				System.out.println(quote);
 				System.out.println();
 				Thread.sleep(1000);
 			}
-			
+
 			//Close the datagram socket
 			socket.close();
 
-			
-			
+
+
 		} catch (SocketTimeoutException ex) {
 			System.out.println("Timeout error: " + ex.getMessage());
 			ex.printStackTrace();
-			
+
 		} catch (IOException ex) {
 			System.out.println("Client error: " + ex.getMessage());
 			ex.printStackTrace();
-			
+
 		} catch (InterruptedException ex) {
 			ex.printStackTrace();
 		}
