@@ -133,7 +133,7 @@ public class Graph{
 						// Get current time
 						Date now = new Date();
 
-						// Put a random number alongside the current time
+						// Put idata alongside the current time
 						series.getData().add(new XYChart.Data<>(simpleDateFormat.format(now),idata));
 
 						// If there is more than WINDOW_SIZE element on the chart, 
@@ -147,7 +147,7 @@ public class Graph{
 		});
 
 
-		// Create a "Client" button to send data locally
+		// Create a "Client" button to send data locally when pressed on
 		Button cli = new Button("Client");
 
 		cli.setOnAction(action->{
@@ -174,7 +174,7 @@ public class Graph{
 		cli.setStyle("-fx-font: normal bold 15px 'sasnserif' ;-fx-background-color: orangered; -fx-text-fill: white;"); 
 
 
-		// Creating a grid to organize the layout of the interface
+		// Creating grids to organize the layout of the interface
 		GridPane grid = new GridPane();
 		grid.setGridLinesVisible(false);
 		GridPane grid2 = new GridPane();
