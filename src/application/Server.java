@@ -94,8 +94,8 @@ public class Server extends Thread {
 
 	/**
 	 * Method which get the values send by the client
-	 * @return received Values receivedValuesY 	
-	 * @see receivedValuesY entry in Field Details
+	 * @return receivedValuesY 	
+	 * @see receivedValuesY 
 	 */
 	public List<Double> getValuesY() {
 		return receivedValuesY;
