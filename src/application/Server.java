@@ -28,7 +28,7 @@ public class Server extends Thread {
 			// Sets up a datagram socket and binds it to the specified port on the local host machine (here, 51008)
 			DatagramSocket ds = new DatagramSocket(51008);
 			System.out.println("Server port: " + ds.getLocalPort());
-			// Creation of 2 buffer bytes arrays
+			// Creation of 2 buffer bytes arrays which will be used to create datagram packets
 			byte[] buffer = new byte[16];
 			byte[] buffer2 = new byte[16];
 
